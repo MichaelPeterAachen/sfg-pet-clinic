@@ -10,6 +10,13 @@
 
     <artifactId>pet-clinic-web</artifactId>
 
+    <name>pet-clinic-web</name>
+    <description>pet-clinic-web</description>
+
+    <properties>
+        <java.version>11</java.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <artifactId>pet-clinic-data</artifactId>
