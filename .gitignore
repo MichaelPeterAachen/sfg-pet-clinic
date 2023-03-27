@@ -140,3 +140,4 @@ Desktop.ini
 ######################
 .eslintcache
 /pet-clinic-data/target/
+/pet-clinic-web/target/
