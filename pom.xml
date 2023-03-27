@@ -5,7 +5,7 @@
 
     <groupId>guru.springframework</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
-    <version>0.0.5-SNAPSHOT</version>
+    <version>0.0.6-SNAPSHOT</version>
 
     <modules>
         <module>pet-clinic-data</module>
@@ -34,6 +34,7 @@
     </properties>
 
     <dependencies/>
+
 
     <build>
         <plugins>
