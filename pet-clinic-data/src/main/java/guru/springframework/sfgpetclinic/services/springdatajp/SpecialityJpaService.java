@@ -3,6 +3,7 @@ package guru.springframework.sfgpetclinic.services.springdatajp;
 import guru.springframework.sfgpetclinic.model.Speciality;
 import guru.springframework.sfgpetclinic.repositories.SpecialityRepository;
 import guru.springframework.sfgpetclinic.services.SpecialityService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -12,12 +13,9 @@ import java.util.Set;
 
 @Service
 @Profile("springdatajpa")
+@RequiredArgsConstructor
 public class SpecialityJpaService implements SpecialityService {
     private final SpecialityRepository specialityRepository;
-
-    public SpecialityJpaService(final SpecialityRepository specialityRepository) {
-        this.specialityRepository = specialityRepository;
-    }
 
     @Override
     public Set<Speciality> findAll() {

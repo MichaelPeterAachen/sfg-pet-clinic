@@ -4,6 +4,7 @@ import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.model.Visit;
 import guru.springframework.sfgpetclinic.services.PetService;
 import guru.springframework.sfgpetclinic.services.VisitService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +12,8 @@ import java.util.Set;
 
 @Service
 @Profile({"map","default"})
+@RequiredArgsConstructor
 public class VisitServiceMap extends AbstractMapService<Visit, Long> implements VisitService {
-
-
     private PetService petService;
 
     @Override

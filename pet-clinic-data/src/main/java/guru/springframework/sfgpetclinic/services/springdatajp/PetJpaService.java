@@ -5,6 +5,7 @@ import guru.springframework.sfgpetclinic.model.PetType;
 import guru.springframework.sfgpetclinic.repositories.PetRepository;
 import guru.springframework.sfgpetclinic.repositories.PetTypeRepository;
 import guru.springframework.sfgpetclinic.services.PetService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +15,9 @@ import java.util.Set;
 
 @Service
 @Profile("springdatajpa")
+@RequiredArgsConstructor
 public class PetJpaService implements PetService {
     private final PetRepository petRepository;
-
-    public PetJpaService(final PetRepository petRepository) {
-        this.petRepository = petRepository;
-    }
 
     @Override
     public Set<Pet> findAll() {
