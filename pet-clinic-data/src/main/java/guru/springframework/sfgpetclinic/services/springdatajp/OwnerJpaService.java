@@ -27,34 +27,34 @@ public class OwnerJpaService implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
-        Set<Owner> owners = new HashSet<>();
+        final Set<Owner> owners = new HashSet<>();
         ownerRepository.findAll().forEach(owners::add);
         return owners;
     }
 
     @Override
-    public Owner findById(Long id) {
-        Optional<Owner> ownerOpt = ownerRepository.findById(id);
+    public Owner findById(final Long id) {
+        final Optional<Owner> ownerOpt = ownerRepository.findById(id);
         return ownerOpt.orElse(null);
     }
 
     @Override
-    public Owner save(Owner element) {
+    public Owner save(final Owner element) {
         return ownerRepository.save(element);
     }
 
     @Override
-    public void delete(Owner element) {
+    public void delete(final Owner element) {
         ownerRepository.delete(element);
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(final Long id) {
         ownerRepository.deleteById(id);
     }
 
     @Override
-    public Owner findByLastName(String lastName) {
+    public Owner findByLastName(final String lastName) {
         return ownerRepository.findByLastName(lastName);
     }
 }
