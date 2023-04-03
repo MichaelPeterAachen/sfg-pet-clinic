@@ -1,9 +1,7 @@
 package guru.springframework.sfgpetclinic.services.springdatajp;
 
-import guru.springframework.sfgpetclinic.model.PetType;
 import guru.springframework.sfgpetclinic.model.Speciality;
-import guru.springframework.sfgpetclinic.repositories.PetTypeRepository;
-import guru.springframework.sfgpetclinic.services.PetTypeService;
+import guru.springframework.sfgpetclinic.repositories.SpecialityRepository;
 import guru.springframework.sfgpetclinic.services.SpecialityService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -15,36 +13,38 @@ import java.util.Set;
 @Service
 @Profile("springdatajpa")
 public class SpecialityJpaService implements SpecialityService {
-    private final SpecialityService specialityService;
+    private final SpecialityRepository specialityRepository;
 
-    public SpecialityJpaService(final SpecialityService specialityService) {
-        this.specialityService = specialityService;
+    public SpecialityJpaService(final SpecialityRepository specialityRepository) {
+        this.specialityRepository = specialityRepository;
     }
 
     @Override
     public Set<Speciality> findAll() {
         final Set<Speciality> result = new HashSet<>();
-        specialityService.findAll().forEach(result::add);
+        specialityRepository.findAll().forEach(result::add);
         return result;
     }
 
     @Override
-    public Speciality findById(final Long id) {
-        return specialityService.findById(id);
+    public Speciality findById(Long id) {
+        Optional<Speciality> opt = specialityRepository.findById(id);
+        return opt.orElse(null);
     }
+
 
     @Override
     public Speciality save(final Speciality element) {
-        return specialityService.save(element);
+        return specialityRepository.save(element);
     }
 
     @Override
     public void delete(final Speciality element) {
-        specialityService.delete(element);
+        specialityRepository.delete(element);
     }
 
     @Override
     public void deleteById(final Long id) {
-        specialityService.deleteById(id);
+        specialityRepository.deleteById(id);
     }
 }
