@@ -39,7 +39,7 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Add Owners and Vets");
 
-        final Owner owner1 = createOwner("Michael", "P", "P-Street", "P-city", "P-Number");
+        final Owner owner1 = createOwner("Michael", "Pezer", "P-Street", "P-city", "P-Number");
         final Pet dog = addPetToOwner(dogType, owner1, "Birdie");
         addOwnerToRepository(owner1, dog);
 
